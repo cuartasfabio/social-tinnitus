@@ -12,11 +12,8 @@ import ddf.minim.ugens.*;
 //   4) Queda a la espera de pulsar cualquier tecla para reproducir y descargar el audio
 //   5) Vuelve al estado inicial (se puede volver a grabar)
 
-// https://p5js.org/es/examples/ aquí en la columna de Sonido hay varios ejemplos que nos pueden servir para alguna cosa
 
-//let mic, recorder, soundFile;
-
-Minim         minim;
+Minim minim;
 
 // Player
 AudioPlayer canciones[];
@@ -27,6 +24,9 @@ int nCanciones = 5;
 // Recorder
 AudioInput   in;
 AudioRecorder recorder;
+
+// Cargado y guardado de audios
+ParserAudios parser;
 
 String textoCuentaAtrasEmpezarGrabacion = "";
 int segsCuentaAtrasEmpezarGrabacion = 3;  // Cuenta atrás para grabar
@@ -57,6 +57,11 @@ void setup() {
   // Carga audios
   canciones = new AudioPlayer[nCanciones];
   cargarDefault();
+  
+  // Cargar audios grabados previamente desde sound_data.txt
+  parser = new ParserAudios();
+  listaAudiosAnteriores = parser.cargarAudios();
+  
 }
 
 void draw() {
@@ -172,4 +177,11 @@ void keyPressed() {
     
     state = -1; // vuelve al estado inicial
   }
+}
+
+public void dispose() {
+    println("Cerrando programa...");
+    
+    // Guardar audios grabados en sound_data.txt
+    parser.guardarAudios(listaAudiosNuevos);
 }
