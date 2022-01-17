@@ -225,6 +225,9 @@ class Cube {
     //Création de la boite, taille variable en fonction de l'intensité pour le cube
     box(100+(intensity/2));
     
+    rotateY(map(mouseX, 0, width, 0, PI));
+    rotateX(map(mouseY, 0, height, 0, PI));
+    
     //Application de la matrice
     popMatrix();
     
