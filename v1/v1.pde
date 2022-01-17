@@ -61,8 +61,6 @@ void setup() {
   
 }
 
-
-
 void draw() {
   
   if(state == -1) {

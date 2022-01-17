@@ -14,7 +14,7 @@ public class ParserAudios {
   // sound_data.txt
   void guardarAudios(ArrayList<Audio> nuevosAudios) {
     for (Audio audio : nuevosAudios) {
-      loggerObject.log("c" + audio.getRuta() + ".wav" + "\t" + audio.getFecha());
+      loggerObject.log(audio.getRuta() + "\t" + audio.getFecha());
     }
   }
 
