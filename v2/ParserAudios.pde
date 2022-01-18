@@ -23,7 +23,7 @@ public class ParserAudios {
     ArrayList<Audio> audios = new ArrayList<Audio>();
     ArrayList<String> lineas = loggerObject.leerLineas();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-    
+
     for (String linea : lineas) {
       String[] datosAudio = linea.split("\t");
       audios.add(new Audio(datosAudio[0], LocalDateTime.parse(datosAudio[1], formatter)));
@@ -31,5 +31,4 @@ public class ParserAudios {
 
     return audios;
   }
-
 }
