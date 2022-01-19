@@ -26,7 +26,9 @@ public class ParserAudios {
     ArrayList<Audio> audios = new ArrayList<Audio>();
     ArrayList<String> lineas = loggerObject.leerLineas();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-    lineas.remove(lineas.size()-1);
+    if (lineas.size() >=1){
+      lineas.remove(lineas.size()-1);
+    }
 
     for (String linea: lineas) {
       String[] datosAudio = linea.split(";");
