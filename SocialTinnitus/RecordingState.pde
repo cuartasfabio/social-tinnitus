@@ -8,6 +8,8 @@ public class RecordingState implements State {
   @Override
     public void display() {
     background(170, 40, 40);
+    displayAnalyzers();
+    fill(255);
     textAlign(CENTER);
     text("Recording...", width/2, height/2- 50);
     text(textoCuentaAtrasGrabando, width/2, height/2);
