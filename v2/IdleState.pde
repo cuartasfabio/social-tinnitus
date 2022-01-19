@@ -2,6 +2,7 @@ public class IdleState implements State {
 
   int t1 = 0;
   int t2 = 0;
+  Boton boton = new Boton(width/2,height/2,30);
 
   @Override
     public void display() {
@@ -20,5 +21,6 @@ public class IdleState implements State {
         empezarAudios();
       }
     }
+    boton.display();
   }
 }

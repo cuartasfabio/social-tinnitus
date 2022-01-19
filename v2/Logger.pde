@@ -54,6 +54,6 @@ public class Logger {
   }
 
   private PrintWriter GetWriter() throws IOException {
-    return new PrintWriter(new BufferedWriter(new FileWriter(m_fileName, true)));
+    return new PrintWriter(new BufferedWriter(new FileWriter(m_fileName, false)));
   }
 }
